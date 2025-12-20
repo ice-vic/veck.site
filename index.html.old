@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veck.io Game Online - Play Free FPS Multiplayer & Pro Strategy Guide</title>
-
+    
     <meta name="description" content="Play Veck.io, the ultra-fast, free, and competitive FPS multiplayer game directly in your browser. Master the slide-jump, learn advanced tactics, and dominate the Veck.io arena!">
     <meta name="keywords" content="Veck.io, Veck io game, play Veck.io online, free FPS game, multiplayer IO game, browser shooter, fast-paced FPS, Veck.io strategy, advanced movement guide">
     <link rel="canonical" href="https://veck.site/">
-
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom Apple-inspired colors */
@@ -19,7 +19,7 @@
             --color-card-bg: rgba(255, 255, 255, 0.85); /* Semi-transparent White for Glass */
             --color-text-dark: #1D1D1F; /* Apple Black */
         }
-
+        
         body {
             background-color: var(--color-background);
             color: var(--color-text-dark);
@@ -60,9 +60,7 @@
             padding-top: 64.86%; /* 480 / 740 aspect ratio */
             overflow: hidden;
             border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            background: #000;
-            margin-bottom: 1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
         }
 
         .iframe-container iframe {
@@ -72,9 +70,8 @@
             width: 100%;
             height: 100%;
             border: none;
-            border-radius: 12px;
         }
-
+        
         /* Mobile Navigation Toggle */
         #nav-menu {
             transition: max-height 0.3s ease-out;
@@ -91,7 +88,7 @@
     <header class="mb-12 bg-white/90 backdrop-blur-sm rounded-xl p-4 sticky top-0 z-10 shadow-lg">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
             <a href="/" class="text-2xl font-bold tracking-tight" style="color: var(--color-primary);">VE<span class="text-gray-700">CK.SITE</span></a>
-
+            
             <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
                 <a href="#game" class="hover:text-blue-500 transition">Play Now</a>
                 <a href="#pro-tips" class="hover:text-blue-500 transition">Pro Tips</a>
@@ -103,7 +100,7 @@
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
             </button>
         </div>
-
+        
         <nav id="nav-menu" class="md:hidden mt-4 pt-2 border-t border-gray-200">
             <a href="#game" class="block py-2 text-gray-700 hover:text-blue-500 transition">Play Now</a>
             <a href="#pro-tips" class="block py-2 text-gray-700 hover:text-blue-500 transition">Pro Tips</a>
@@ -118,28 +115,18 @@
             <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-center" style="color: var(--color-text-dark);">
                 <span style="color: var(--color-primary);">Veck.io</span> Game Online - Play Free Multiplayer FPS Arena
             </h1>
-
+            
             <div class="flex flex-col items-center glass-card p-6 md:p-10 rounded-2xl shadow-lg">
-                <div class="w-full">
-                    <!-- Game iframe container -->
-                    <div class="iframe-container mb-4">
-                        <iframe
-                            id="game-iframe"
-                            src="https://iogames.onl/veckio.embed"
-                            title="Veck.io Game"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-
-                    <!-- Fullscreen button -->
-                    <div class="text-center">
-                        <button id="fullscreen-button" class="fullscreen-btn inline-flex items-center gap-2">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"></path>
-                            </svg>
-                            全屏游戏
-                        </button>
-                    </div>
+                <div class="w-full text-center">
+                    <p class="text-lg md:text-xl font-semibold mb-6 text-gray-700">
+                        Veck.io 是一款独占游戏，请点击下方按钮，立即前往 CrazyGames 平台体验这款超快节奏�?FPS 射击游戏�?
+                    </p>
+                    <a href="https://www.crazygames.com/game/veck-io" target="_blank" rel="noopener noreferrer" class="inline-block py-4 px-10 text-xl font-bold rounded-xl shadow-2xl transition transform hover:scale-105" style="background-color: var(--color-primary); color: white;">
+                        ▶️ Go Play Veck.io On CrazyGames
+                    </a>
+                    <p class="mt-4 text-sm text-gray-500">
+                        （您将被重定向到 CrazyGames.com，这是游戏的主要发行平台�?
+                    </p>
                 </div>
             </div>
         </section>
@@ -151,7 +138,7 @@
             <p class="text-lg mb-6">
                 Veck.io is more than just point-and-shoot; it's a game of speed, precision, and controlling the battlefield. While the core Team Deathmatch goal is simple—outscore your opponents—mastering the controls is the first step toward becoming a competitive player.
             </p>
-
+            
             <div class="grid md:grid-cols-2 gap-6 mt-6">
                 <div class="p-4 bg-white/50 rounded-lg">
                     <h3 class="font-semibold text-xl mb-2" style="color: var(--color-text-dark);">Essential Controls</h3>
@@ -172,13 +159,13 @@
                     </ul>
                 </div>
             </div>
-
+            
             <h3 class="font-semibold text-2xl mt-8 mb-4 border-t pt-4" style="color: var(--color-text-dark);">Deep Dive: Fire Control and Strategy</h3>
             <p class="text-base text-gray-700">
                 In Veck.io, successful engagement relies on controlling your weapon's recoil. At long range, transition from full auto to short **bursts (3-5 rounds)** to ensure accuracy and minimal bullet spread. Reserve **full-auto sweeping** for close-quarters engagements where mobility (like slide-jumping around the target) is prioritized over pin-point accuracy. Furthermore, high-level play demands sound awareness—listen closely for enemy footsteps and reload cues to anticipate attacks before the enemy even appears on your screen.
             </p>
         </section>
-
+        
         <section class="mb-16 glass-card p-6 md:p-10 rounded-2xl">
             <h2 class="text-3xl font-bold mb-6 border-b pb-2" style="color: var(--color-primary);">
                 Why Veck.io is the Ultimate Browser FPS
@@ -227,7 +214,7 @@
             </h2>
             <div class="grid md:grid-cols-3 gap-6 text-center">
                 <div class="p-4 rounded-lg bg-white/60 hover:bg-white/80 transition transform hover:scale-[1.03]">
-                    <span class="text-4xl block mb-2">🛡️</span>
+                    <span class="text-4xl block mb-2">🛡�?/span>
                     <h3 class="font-semibold text-xl mb-1">Diverse Loadouts</h3>
                     <p class="text-sm text-gray-600">Choose from primary rifles, quick SMGs, or high-risk snipers to define your play style in every match.</p>
                 </div>
@@ -237,7 +224,7 @@
                     <p class="text-sm text-gray-600">Minimize downtime and maximize action. Get back into the fight immediately after being eliminated.</p>
                 </div>
                 <div class="p-4 rounded-lg bg-white/60 hover:bg-white/80 transition transform hover:scale-[1.03]">
-                    <span class="text-4xl block mb-2">🗺️</span>
+                    <span class="text-4xl block mb-2">🗺�?/span>
                     <h3 class="font-semibold text-xl mb-1">Optimized Maps</h3>
                     <p class="text-sm text-gray-600">Maps are strategically designed to funnel players into constant, engaging skirmishes.</p>
                 </div>
@@ -255,7 +242,7 @@
                 <li>**Session End:** The round concludes when a score limit is met or the clock expires. Your stats are recorded, and you are prompted for the next match.</li>
             </ol>
         </section>
-
+        
         <section id="faq" class="mb-16 glass-card p-6 md:p-10 rounded-2xl">
             <h2 class="text-3xl font-bold mb-6 border-b pb-2" style="color: var(--color-primary);">
                 Frequently Asked Questions (FAQ)
@@ -311,7 +298,7 @@
             menuToggle.addEventListener('click', () => {
                 body.classList.toggle('nav-open');
             });
-
+            
             // 2. Fullscreen Functionality
             const fullscreenButton = document.getElementById('fullscreen-button');
             const gameIframe = document.getElementById('game-iframe');
@@ -327,33 +314,7 @@
                     gameIframe.msRequestFullscreen();
                 }
             });
-
-            // 3. Game Loading State
-            const iframeContainer = document.querySelector('.iframe-container');
-
-            // Show loading indicator
-            const loadingIndicator = document.createElement('div');
-            loadingIndicator.className = 'absolute inset-0 flex items-center justify-center bg-black rounded-12';
-            loadingIndicator.innerHTML = `
-                <div class="text-white text-center">
-                    <div class="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent mx-auto mb-4"></div>
-                    <p class="text-lg font-medium">正在加载游戏...</p>
-                    <p class="text-sm text-gray-300 mt-1">Loading Veck.io Game</p>
-                </div>
-            `;
-            iframeContainer.appendChild(loadingIndicator);
-
-            // Hide loading when iframe loads
-            gameIframe.addEventListener('load', () => {
-                setTimeout(() => {
-                    loadingIndicator.style.opacity = '0';
-                    loadingIndicator.style.transition = 'opacity 0.5s ease';
-                    setTimeout(() => {
-                        loadingIndicator.remove();
-                    }, 500);
-                }, 1000); // Small delay to ensure game is ready
-            });
-
+            
             // Hide menu after clicking a link in mobile view
             document.querySelectorAll('#nav-menu a').forEach(link => {
                 link.addEventListener('click', () => {

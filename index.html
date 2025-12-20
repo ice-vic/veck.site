@@ -328,31 +328,106 @@
                 }
             });
 
-            // 3. Game Loading State
+            // 3. Game Loading State with Progress
             const iframeContainer = document.querySelector('.iframe-container');
 
-            // Show loading indicator
+            // Create enhanced loading indicator with progress
             const loadingIndicator = document.createElement('div');
             loadingIndicator.className = 'absolute inset-0 flex items-center justify-center bg-black rounded-12';
             loadingIndicator.innerHTML = `
-                <div class="text-white text-center">
-                    <div class="animate-spin rounded-full h-12 w-12 border-4 border-white border-t-transparent mx-auto mb-4"></div>
-                    <p class="text-lg font-medium">正在加载游戏...</p>
-                    <p class="text-sm text-gray-300 mt-1">Loading Veck.io Game</p>
+                <div class="text-white text-center w-full max-w-md px-6">
+                    <div class="mb-6">
+                        <div class="animate-pulse">
+                            <svg class="w-16 h-16 mx-auto mb-4 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M13.5 5.5c1.09 0 2-.91 2-2s-.91-2-2-2-2 .91-2 2 .91 2 2 2zM9.8 8.8L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.8"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">正在加载游戏...</h3>
+                        <p class="text-sm text-gray-300 mb-4">Loading Veck.io Game</p>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="w-full bg-gray-700 rounded-full h-2 mb-4 overflow-hidden">
+                        <div id="progress-bar" class="bg-gradient-to-r from-blue-400 to-blue-600 h-2 rounded-full transition-all duration-300 ease-out" style="width: 0%"></div>
+                    </div>
+
+                    <!-- Loading Status -->
+                    <div id="loading-status" class="text-sm text-gray-400">
+                        <span id="loading-text">初始化游戏引擎...</span>
+                        <span id="loading-percent" class="ml-2 font-mono text-blue-400">0%</span>
+                    </div>
+
+                    <!-- Loading Tips -->
+                    <div class="mt-6 text-xs text-gray-500 space-y-1" id="loading-tips">
+                        <p>💡 提示：游戏加载完成后可全屏体验</p>
+                    </div>
                 </div>
             `;
             iframeContainer.appendChild(loadingIndicator);
 
+            // Progress animation
+            const progressBar = document.getElementById('progress-bar');
+            const loadingText = document.getElementById('loading-text');
+            const loadingPercent = document.getElementById('loading-percent');
+
+            let progress = 0;
+            const loadingSteps = [
+                { percent: 15, text: '连接游戏服务器...' },
+                { percent: 30, text: '加载游戏资源...' },
+                { percent: 45, text: '初始化游戏引擎...' },
+                { percent: 60, text: '加载游戏模型...' },
+                { percent: 75, text: '配置游戏环境...' },
+                { percent: 85, text: '优化游戏性能...' },
+                { percent: 95, text: '即将完成...' }
+            ];
+
+            // Animate progress bar
+            const progressInterval = setInterval(() => {
+                const currentStep = loadingSteps.find(step => step.percent > progress) || loadingSteps[loadingSteps.length - 1];
+
+                if (progress < currentStep.percent) {
+                    progress += Math.random() * 3 + 1; // Random increment
+                    progress = Math.min(progress, currentStep.percent);
+
+                    progressBar.style.width = progress + '%';
+                    loadingPercent.textContent = Math.round(progress) + '%';
+
+                    if (progress >= currentStep.percent) {
+                        loadingText.textContent = currentStep.text;
+                    }
+                } else if (progress < 95) {
+                    progress += 0.5;
+                    progressBar.style.width = progress + '%';
+                    loadingPercent.textContent = Math.round(progress) + '%';
+                }
+            }, 200);
+
             // Hide loading when iframe loads
             gameIframe.addEventListener('load', () => {
+                clearInterval(progressInterval);
+
+                // Complete progress
+                progressBar.style.width = '100%';
+                loadingPercent.textContent = '100%';
+                loadingText.textContent = '游戏加载完成！';
+
+                // Show ready state briefly
                 setTimeout(() => {
                     loadingIndicator.style.opacity = '0';
                     loadingIndicator.style.transition = 'opacity 0.5s ease';
                     setTimeout(() => {
                         loadingIndicator.remove();
                     }, 500);
-                }, 1000); // Small delay to ensure game is ready
+                }, 800);
             });
+
+            // Fallback: if iframe takes too long, show appropriate message
+            setTimeout(() => {
+                if (progress < 50) {
+                    loadingText.textContent = '游戏服务器响应较慢，请稍候...';
+                    document.getElementById('loading-tips').innerHTML = '<p>⚠️ 网络较慢时可能需要更多时间</p><p>💡 如长时间未加载，请刷新页面重试</p>';
+                }
+            }, 10000);
 
             // Hide menu after clicking a link in mobile view
             document.querySelectorAll('#nav-menu a').forEach(link => {

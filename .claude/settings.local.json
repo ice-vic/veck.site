@@ -8,7 +8,8 @@
       "Bash(findstr /i \"code\\\\|notepad\\\\|editor\")",
       "Bash(powershell:*)",
       "Bash(del:*)",
-      "Bash(ren:*)"
+      "Bash(ren:*)",
+      "Bash(git push:*)"
     ]
   }
 }
